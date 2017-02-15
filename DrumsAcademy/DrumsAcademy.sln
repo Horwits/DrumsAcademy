@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.WebForms", "Dr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{79C5A53A-68E0-437B-9942-3065D8584FE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Models", "DrumsAcademy.Models\DrumsAcademy.Models.csproj", "{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{75C82987-876D-4A3A-8453-AE8710BCC740}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Common", "DrumsAcademy.Common\DrumsAcademy.Common.csproj", "{F377A03D-159D-46E1-BDD2-A0E83468E0F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +27,21 @@ Global
 		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5} = {934490D7-75FF-4B71-A4A2-3E6645075328}
+		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38} = {79C5A53A-68E0-437B-9942-3065D8584FE4}
+		{F377A03D-159D-46E1-BDD2-A0E83468E0F5} = {75C82987-876D-4A3A-8453-AE8710BCC740}
 	EndGlobalSection
 EndGlobal
