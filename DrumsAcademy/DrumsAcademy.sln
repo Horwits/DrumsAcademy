@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{934490D7-75FF-4B71-A4A2-3E6645075328}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D0BCA221-3F78-44D5-9197-F74AD44F2B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.WebForms", "DrumsAcademy.WebForms\DrumsAcademy.WebForms.csproj", "{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{79C5A53A-68E0-437B-9942-3065D8584FE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5} = {934490D7-75FF-4B71-A4A2-3E6645075328}
+	EndGlobalSection
+EndGlobal
