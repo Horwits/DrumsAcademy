@@ -2,6 +2,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
 
 /* Wrapping element */
@@ -32,10 +33,31 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }
+
+    .btn, button[type=button] {
+        border-color: #2bbbff;
+        background-color: #2bbbff;
+        color: #f7f5e6;
+    }
+        .btn:hover, button[type=button]:hover {
+            border-color: #f7f5e6;
+            background-color: #f7f5e6;
+            color: #2bbbff;
+        }
 }
-#nav-container {
-    
+
+.btn, button[type=button] {
+    border-color: #2bbbff;
+    background-color: #2bbbff;
+    color: #f7f5e6;
 }
+
+    .btn:hover, button[type=button]:hover {
+        border-color: #f7f5e6;
+        background-color: #f7f5e6;
+        color: #2bbbff;
+    }
