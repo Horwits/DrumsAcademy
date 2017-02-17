@@ -1,10 +1,9 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
-}
-
+﻿@import url(https://fonts.googleapis.com/css?family=UnifrakturMaguntia);
+@import url("./font-awesome.min.css");
+@import url("./CssModules/buttons.css");
+@import url("./CssModules/backgrounds.css");
+@import url("./CssModules/texts.css");
+/* Move down content because we have a fixed navbar that is 50px tall */
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -29,35 +28,64 @@ input[type="select"] {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     .jumbotron {
         margin-top: 20px;
+    }
+
+    .jumbotron {
+        position: relative;
+        z-index: 1;
     }
 
     .body-content {
         padding: 0;
     }
 
-    .btn, button[type=button] {
-        border-color: #2bbbff;
-        background-color: #2bbbff;
-        color: #f7f5e6;
+    .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
     }
-        .btn:hover, button[type=button]:hover {
-            border-color: #f7f5e6;
-            background-color: #f7f5e6;
-            color: #2bbbff;
+
+        .row > [class*='col-'] {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 }
 
-.btn, button[type=button] {
-    border-color: #2bbbff;
-    background-color: #2bbbff;
-    color: #f7f5e6;
+.navbar-brand-centered {
+    position: absolute;
+    left: 50%;
+    display: block;
+    text-align: center;
 }
 
-    .btn:hover, button[type=button]:hover {
-        border-color: #f7f5e6;
-        background-color: #f7f5e6;
-        color: #2bbbff;
+.navbar > .container .navbar-brand-centered,
+.navbar > .container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+}
+
+.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
     }
+
+.control-label {
+    margin: 0 auto;
+    text-align: center;
+}
+input {
+    margin: 0 auto;
+}

@@ -1,0 +1,29 @@
+﻿@media screen and (min-width: 768px) {
+    .btn, button, .navbar-toggle, .collapsed {
+        border-color: #2bbbff;
+        background-color: #2bbbff;
+        color: #f7f5e6;
+    }
+
+        .btn:hover, button:hover, .navbar-toggle:hover, .collapsed:hover {
+            border-color: #f7f5e6;
+            background-color: #f7f5e6;
+            color: #2bbbff;
+        }
+
+        .navbar-toggle .collapsed {
+            float: right;
+        }
+}
+
+.btn, button[type=button] {
+    border-color: #2bbbff;
+    background-color: #2bbbff;
+    color: #f7f5e6;
+}
+
+    .btn:hover, button[type=button]:hover {
+        border-color: #f7f5e6;
+        background-color: #f7f5e6;
+        color: #2bbbff;
+    }

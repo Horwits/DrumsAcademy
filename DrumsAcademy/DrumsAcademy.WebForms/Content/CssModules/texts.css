@@ -1,0 +1,22 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+div {
+    text-align: center;
+}
+
+.jumbotron p,.jumbotron h1,.jumbotron h2,.jumbotron a {
+    font-weight: bold;
+    color: #fdf5e6;
+}
+
+.jumbotron h1 {
+    font-family: UnifrakturMaguntia;
+}
+
+.jumbotron h2.yellow, .jumbotron p.lead {
+    color: #e6b357;
+}
