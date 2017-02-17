@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{75C82987-8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Common", "DrumsAcademy.Common\DrumsAcademy.Common.csproj", "{F377A03D-159D-46E1-BDD2-A0E83468E0F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{A4A7DD98-44C9-4C16-97BD-AA67B4368FE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ErrorHtmlPages", "ErrorHtmlPages", "{BC6EC675-B7B9-4BE7-BC65-6ED3059BC6B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Authentication", "DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj", "{F550C2A6-2D23-4D8C-8050-3C27364441D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +41,10 @@ Global
 		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F377A03D-159D-46E1-BDD2-A0E83468E0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F550C2A6-2D23-4D8C-8050-3C27364441D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F550C2A6-2D23-4D8C-8050-3C27364441D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F550C2A6-2D23-4D8C-8050-3C27364441D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F550C2A6-2D23-4D8C-8050-3C27364441D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +53,6 @@ Global
 		{4C32FAED-9C8A-47E0-8DDF-D930C30C02A5} = {934490D7-75FF-4B71-A4A2-3E6645075328}
 		{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38} = {79C5A53A-68E0-437B-9942-3065D8584FE4}
 		{F377A03D-159D-46E1-BDD2-A0E83468E0F5} = {75C82987-876D-4A3A-8453-AE8710BCC740}
+		{F550C2A6-2D23-4D8C-8050-3C27364441D4} = {A4A7DD98-44C9-4C16-97BD-AA67B4368FE3}
 	EndGlobalSection
 EndGlobal
