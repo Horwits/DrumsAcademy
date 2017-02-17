@@ -1,12 +1,10 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
-using DrumsAcademy.Authentication;
-using DrumsAcademy.WebForms.Models;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 
-namespace DrumsAcademy.WebForms
+namespace DrumsAcademy.Authentication
 {
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {
