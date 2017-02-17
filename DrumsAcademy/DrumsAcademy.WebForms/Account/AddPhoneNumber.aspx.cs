@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
+using DrumsAcademy.Authentication;
 using DrumsAcademy.WebForms.Models;
 
 namespace DrumsAcademy.WebForms.Account

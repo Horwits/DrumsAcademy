@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using DrumsAcademy.Authentication;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
