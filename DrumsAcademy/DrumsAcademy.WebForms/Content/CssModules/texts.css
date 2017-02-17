@@ -1,21 +1,40 @@
-﻿body {
+﻿@font-face {
+    font-family: 'OldEnglishFive';
+    src: url('../../fonts/OldEnglishFive.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'gill-sans-mt-58a6f4012b58f';
+    src: url('../../fonts/gill-sans-mt-58a6f4012b58f.ttf') format('truetype');
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    font-family: gill-sans-mt-58a6f4012b58f, Calibri, Trebuchet, sans-serif;
 }
 
 div {
     text-align: center;
 }
 
-.jumbotron p,.jumbotron h1,.jumbotron h2,.jumbotron a {
-    font-weight: bold;
+.nav.navbar-nav li a , .jumbotron p, .jumbotron h1, .jumbotron h2, .jumbotron a {
     color: #fdf5e6;
 }
 
-.jumbotron h1 {
-    font-family: UnifrakturMaguntia;
+   .nav.navbar-nav li a:hover {
+        color: #2bbbff;
+    }
+
+.jumbotron p, .jumbotron h1, .jumbotron h2, .jumbotron a {
+    font-weight: bold;
 }
+
+
+.jumbotron h1, footer {
+    font-family: 'OldEnglishFive';
+}
+
 
 .jumbotron h2.yellow, .jumbotron p.lead {
     color: #e6b357;
