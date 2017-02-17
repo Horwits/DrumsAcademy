@@ -173,12 +173,44 @@
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\CssModules\backgrounds.css" />
+    <Content Include="Content\CssModules\buttons.css" />
+    <Content Include="Content\CssModules\texts.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Images\243917822459d1bf1ffefa67abe8b129.jpg" />
+    <Content Include="Content\Images\30be17aa5ecb45ae5f281043fa52b37f.jpg" />
+    <Content Include="Content\Images\6001762_orig.png" />
+    <Content Include="Content\Images\94b41afbed3e33a9875fd6d526cc5bdc.jpg" />
+    <Content Include="Content\Images\9F4.gif" />
+    <Content Include="Content\Images\drums-animated-gif-23.gif" />
+    <Content Include="Content\Images\jsLnXB.gif" />
+    <Content Include="Content\Images\light_wood_20120518_1861294975.jpg" />
+    <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\logo1.png" />
+    <Content Include="Content\Images\logo2.png" />
+    <Content Include="Content\Images\Lombardo-drum-roll.gif" />
+    <Content Include="Content\Images\media-console-tv-stand-wood-finish-option-Espresso-Cherry-CE-desc.jpg" />
+    <Content Include="Content\Images\raw.gif" />
+    <Content Include="Content\Images\RoyHaynes1000.gif" />
+    <Content Include="Content\Images\StockSnap_BAWU05H9YR.jpg" />
+    <Content Include="Content\Images\tumblr_mzc3lzWZEv1se0v34o1_500.gif" />
+    <Content Include="Content\Images\tumblr_ndp3z0PYCI1u0b4gvo2_500.gif" />
+    <Content Include="Content\Images\tumblr_nlkidqckrZ1u3y1flo1_500.gif" />
+    <Content Include="Content\Images\ZVpGosS.gif" />
+    <Content Include="Content\site.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Content\Images\6001762_orig.pdn" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -342,9 +374,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -362,7 +392,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -378,7 +407,6 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -389,6 +417,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj">
+      <Project>{F550C2A6-2D23-4D8C-8050-3C27364441D4}</Project>
+      <Name>DrumsAcademy.Authentication</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
