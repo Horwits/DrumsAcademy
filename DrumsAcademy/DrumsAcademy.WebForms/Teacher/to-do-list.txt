@@ -1,0 +1,6 @@
+﻿pages 
+	create resource -> based on its type -> different pages
+	create video resource / 
+	create article resource
+	create book resource
+	

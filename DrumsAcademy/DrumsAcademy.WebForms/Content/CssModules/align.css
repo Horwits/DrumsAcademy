@@ -1,0 +1,20 @@
+﻿.search {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 14px;
+}
+
+.input-sm, .dropdown {
+    vertical-align: middle;
+    display: table-cell;
+    height: 22px;
+}
+
+.ul-actions-menu {
+    margin: 0 auto;
+}
+
+.btn-margin {
+    margin: 10px 0;
+}

@@ -1,0 +1,7 @@
+﻿pages
+	add teacher
+	edit teacher
+	remove teacher
+	add user
+	update user -> making him a teacher
+	remove user
