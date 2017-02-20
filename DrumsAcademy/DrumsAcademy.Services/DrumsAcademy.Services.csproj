@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F377A03D-159D-46E1-BDD2-A0E83468E0F5}</ProjectGuid>
+    <ProjectGuid>{7A440616-8019-4C92-ADB1-620EABF253B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DrumsAcademy.Common</RootNamespace>
-    <AssemblyName>DrumsAcademy.Common</AssemblyName>
+    <RootNamespace>DrumsAcademy.Services</RootNamespace>
+    <AssemblyName>DrumsAcademy.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,13 +49,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\CategoryType.cs" />
-    <Compile Include="Enums\LevelType.cs" />
-    <Compile Include="Enums\ResourceType.cs" />
+    <Compile Include="Auth\Contracts\IUserAccountService.cs" />
+    <Compile Include="Data\CategoryService.cs" />
+    <Compile Include="Data\Contracts\ICategoryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Constants\" />
+    <ProjectReference Include="..\DrumsAcademy.Common\DrumsAcademy.Common.csproj">
+      <Project>{F377A03D-159D-46E1-BDD2-A0E83468E0F5}</Project>
+      <Name>DrumsAcademy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Data.Contracts\DrumsAcademy.Data.Contracts.csproj">
+      <Project>{05d9b228-3399-47c4-897e-24f7f871640e}</Project>
+      <Name>DrumsAcademy.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Data\DrumsAcademy.Data.csproj">
+      <Project>{5d017a44-98ea-4ffe-8603-e1e73e2391c3}</Project>
+      <Name>DrumsAcademy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Models\DrumsAcademy.Models.csproj">
+      <Project>{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}</Project>
+      <Name>DrumsAcademy.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

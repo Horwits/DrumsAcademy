@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DrumsAcademy.Common")]
+[assembly: AssemblyTitle("DrumsAcademy.Mvp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DrumsAcademy.Common")]
+[assembly: AssemblyProduct("DrumsAcademy.Mvp")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f377a03d-159d-46e1-bdd2-a0e83468e0f5")]
+[assembly: Guid("9ee23ee2-e0c2-4727-9d91-444800d52d79")]
 
 // Version information for an assembly consists of the following four values:
 //      Major Version
