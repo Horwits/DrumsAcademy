@@ -1,35 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
+using DrumsAcademy.Authentication;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using System.Threading.Tasks;
-using DrumsAcademy.Authentication;
-using DrumsAcademy.WebForms.Models;
 
 namespace DrumsAcademy.WebForms.Account
 {
-    public partial class AddPhoneNumber : System.Web.UI.Page
+    public partial class AddPhoneNumber : Page
     {
         protected void PhoneNumber_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var code = manager.GenerateChangePhoneNumberToken(User.Identity.GetUserId(), PhoneNumber.Text);
+            var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var code = manager.GenerateChangePhoneNumberToken(this.User.Identity.GetUserId(), this.PhoneNumber.Text);
             if (manager.SmsService != null)
             {
                 var message = new IdentityMessage
-                {
-                    Destination = PhoneNumber.Text,
-                    Body = "Your security code is " + code
-                };
+                                  {
+                                      Destination = this.PhoneNumber.Text,
+                                      Body = "Your security code is " + code
+                                  };
 
                 manager.SmsService.Send(message);
             }
 
-            Response.Redirect("/Account/VerifyPhoneNumber?PhoneNumber=" + HttpUtility.UrlEncode(PhoneNumber.Text));
+            this.Response.Redirect(
+                "/Account/VerifyPhoneNumber?PhoneNumber=" + HttpUtility.UrlEncode(this.PhoneNumber.Text));
         }
     }
 }

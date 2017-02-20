@@ -14,7 +14,7 @@ body {
     font-family: gill-sans-mt-58a6f4012b58f, Calibri, Trebuchet, sans-serif;
 }
 
-div {
+div, footer {
     text-align: center;
 }
 

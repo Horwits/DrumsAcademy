@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -19,8 +19,6 @@
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
@@ -34,10 +32,8 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
         <div id="nav-container" class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -52,6 +48,8 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" id="adminLink" href="~/Admin/AdminPanel.aspx">Admin</a></li>
+                        <li><a runat="server" id="teacherLink" href="~/Teacher/TeacherPanel.aspx">Teacher</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -62,7 +60,8 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Search/Search.aspx">Search</a></li>
+                                <li><a id="ManageUserButtonId" onserverclick="ManageUserButtonId_OnServerClick" runat="server" title="Manage your account">Hello, <%: this.Context.User.Identity.GetUserName() %> !</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -75,11 +74,11 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - DrumsAcademy</p>
-            </footer>
         </div>
+        <footer class="container">
+            <hr />
+            <p>&copy; <%: DateTime.Now.Year %> - DrumsAcademy</p>
+        </footer>
     </form>
 </body>
 </html>

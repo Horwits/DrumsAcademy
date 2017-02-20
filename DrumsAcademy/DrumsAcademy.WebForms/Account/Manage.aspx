@@ -1,13 +1,13 @@
 ﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="DrumsAcademy.WebForms.Account.Manage" %>
 
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+<%@ Register Src="~/UserControls/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <h2><%: this.Title %>.</h2>
 
     <div>
         <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
-            <p class="text-success"><%: SuccessMessage %></p>
+            <p class="text-success"><%: this.SuccessMessage %></p>
         </asp:PlaceHolder>
     </div>
 
@@ -23,9 +23,8 @@
                         <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="[Create]" Visible="false" ID="CreatePassword" runat="server" />
                     </dd>
                     <dt>External Logins:</dt>
-                    <dd><%: LoginsCount %>
+                    <dd><%: this.LoginsCount %>
                         <asp:HyperLink NavigateUrl="/Account/ManageLogins" Text="[Manage]" runat="server" />
-
                     </dd>
                     <%--
                         Phone Numbers can used as a second factor of verification in a two-factor authentication system.
@@ -57,15 +56,15 @@
                             There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
                             for details on setting up this ASP.NET application to support two-factor authentication.
                         </p>
-                        <% if (TwoFactorEnabled)
-                          { %> 
+                        <% if (this.TwoFactorEnabled)
+                           { %> 
                         <%--
                         Enabled
                         <asp:LinkButton Text="[Disable]" runat="server" CommandArgument="false" OnClick="TwoFactorDisable_Click" />
                         --%>
                         <% }
-                          else
-                          { %> 
+                           else
+                           { %> 
                         <%--
                         Disabled
                         <asp:LinkButton Text="[Enable]" CommandArgument="true" OnClick="TwoFactorEnable_Click" runat="server" />

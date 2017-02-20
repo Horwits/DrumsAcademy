@@ -2,18 +2,25 @@
 @import url("./CssModules/buttons.css");
 @import url("./CssModules/backgrounds.css");
 @import url("./CssModules/texts.css");
+@import url("./CssModules/align.css");
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
+    height: 550px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+footer {
+    height: 70px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+.dl-horizontal dt{ 
     white-space: normal;
 }
 
@@ -30,9 +37,6 @@ input[type="select"] {
 @media screen and (max-width: 768px) {
     .jumbotron {
         margin-top: 20px;
-    }
-
-    .jumbotron {
         position: relative;
         z-index: 1;
     }
@@ -52,6 +56,9 @@ input[type="select"] {
         .row > [class*='col-'] {
             width: 100%;
             display: flex;
+            -ms-flex-direction: column;
+            -o-flex-direction: column;
+            -webkit-flex-direction: column;
             flex-direction: column;
         }
 }
@@ -73,13 +80,20 @@ input[type="select"] {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }
 
-    .row > [class*='col-'] {
-        display: flex;
-        flex-direction: column;
-    }
+.row > [class*='col-'] {
+    display: flex;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
 
 .control-label {
     margin: 0 auto;

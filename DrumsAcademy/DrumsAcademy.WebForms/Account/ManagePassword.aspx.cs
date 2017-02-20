@@ -1,89 +1,82 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+
 using DrumsAcademy.Authentication;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace DrumsAcademy.WebForms.Account
 {
-    public partial class ManagePassword : System.Web.UI.Page
+    public partial class ManagePassword : Page
     {
-        protected string SuccessMessage
-        {
-            get;
-            private set;
-        }
+        protected string SuccessMessage { get; private set; }
 
-        private bool HasPassword(ApplicationUserManager manager)
+        protected void ChangePassword_Click(object sender, EventArgs e)
         {
-            return manager.HasPassword(User.Identity.GetUserId());
-        }
-
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-
-            if (!IsPostBack)
+            if (this.IsValid)
             {
-                // Determine the sections to render
-                if (HasPassword(manager))
+                var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var signInManager = this.Context.GetOwinContext().Get<ApplicationSignInManager>();
+                IdentityResult result = manager.ChangePassword(
+                    this.User.Identity.GetUserId(),
+                    this.CurrentPassword.Text,
+                    this.NewPassword.Text);
+                if (result.Succeeded)
                 {
-                    changePasswordHolder.Visible = true;
+                    var user = manager.FindById(this.User.Identity.GetUserId());
+                    signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+                    this.Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
                 }
                 else
                 {
-                    setPassword.Visible = true;
-                    changePasswordHolder.Visible = false;
-                }
-
-                // Render success message
-                var message = Request.QueryString["m"];
-                if (message != null)
-                {
-                    // Strip the query string from action
-                    Form.Action = ResolveUrl("~/Account/Manage");
+                    this.AddErrors(result);
                 }
             }
         }
 
-        protected void ChangePassword_Click(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsValid)
+            var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            if (!this.IsPostBack)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-                IdentityResult result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
-                if (result.Succeeded)
+                // Determine the sections to render
+                if (this.HasPassword(manager))
                 {
-                    var user = manager.FindById(User.Identity.GetUserId());
-                    signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                    Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
+                    this.changePasswordHolder.Visible = true;
                 }
                 else
                 {
-                    AddErrors(result);
+                    this.setPassword.Visible = true;
+                    this.changePasswordHolder.Visible = false;
+                }
+
+                // Render success message
+                var message = this.Request.QueryString["m"];
+                if (message != null)
+                {
+                    // Strip the query string from action
+                    this.Form.Action = this.ResolveUrl("~/Account/Manage");
                 }
             }
         }
 
         protected void SetPassword_Click(object sender, EventArgs e)
         {
-            if (IsValid)
+            if (this.IsValid)
             {
                 // Create the local login info and link the local account to the user
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                IdentityResult result = manager.AddPassword(User.Identity.GetUserId(), password.Text);
+                var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                IdentityResult result = manager.AddPassword(this.User.Identity.GetUserId(), this.password.Text);
                 if (result.Succeeded)
                 {
-                    Response.Redirect("~/Account/Manage?m=SetPwdSuccess");
+                    this.Response.Redirect("~/Account/Manage?m=SetPwdSuccess");
                 }
                 else
                 {
-                    AddErrors(result);
+                    this.AddErrors(result);
                 }
             }
         }
@@ -92,8 +85,13 @@ namespace DrumsAcademy.WebForms.Account
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                this.ModelState.AddModelError(string.Empty, error);
             }
+        }
+
+        private bool HasPassword(ApplicationUserManager manager)
+        {
+            return manager.HasPassword(this.User.Identity.GetUserId());
         }
     }
 }

@@ -1,4 +1,10 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DrumsAcademy.WebForms._Default" %>
+<%@ Import Namespace="System.Web.DynamicData" %>
+<%@ Import Namespace="System.Web.UI" %>
+<%@ Import Namespace="System.Web.UI.WebControls" %>
+<%@ Import Namespace="System.Web.UI.WebControls" %>
+<%@ Import Namespace="System.Web.UI.WebControls.Expressions" %>
+<%@ Import Namespace="System.Web.UI.WebControls.WebParts" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -16,7 +22,7 @@
                 We have created a plan for the beginners and also every drummer who wants to learn something new.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Check it out &raquo;</a>
+                <a class="btn btn-default" href="~/Plan/Plan.aspx" runat="server">Check it out &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
