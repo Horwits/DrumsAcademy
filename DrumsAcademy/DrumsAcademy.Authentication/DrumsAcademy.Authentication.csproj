@@ -89,9 +89,14 @@
     <Compile Include="ApplicationSignInManager.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="ApplicationUserManager.cs" />
+    <Compile Include="RoleActions.cs" />
+    <Compile Include="Factories\ApplicationContextFactory.cs" />
+    <Compile Include="Contracts\IRoleActions.cs" />
     <Compile Include="EmailService.cs" />
+    <Compile Include="Contracts\Factories\IApplicationContextFactory.cs" />
     <Compile Include="IdentityHelper.cs" />
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmsService.cs" />
     <Compile Include="Startup.Auth.cs" />
@@ -100,6 +105,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DrumsAcademy.Models\DrumsAcademy.Models.csproj">
+      <Project>{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}</Project>
+      <Name>DrumsAcademy.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

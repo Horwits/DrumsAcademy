@@ -5,25 +5,23 @@ namespace DrumsAcademy.Authentication
 {
     public static class IdentityHelper
     {
+        public const string CodeKey = "code";
+
+        public const string ProviderNameKey = "providerName";
+
+        public const string UserIdKey = "userId";
+
         // Used for XSRF when linking external logins
         public const string XsrfKey = "XsrfId";
 
-        public const string ProviderNameKey = "providerName";
-        public static string GetProviderNameFromRequest(HttpRequest request)
-        {
-            return request.QueryString[ProviderNameKey];
-        }
-
-        public const string CodeKey = "code";
         public static string GetCodeFromRequest(HttpRequest request)
         {
             return request.QueryString[CodeKey];
         }
 
-        public const string UserIdKey = "userId";
-        public static string GetUserIdFromRequest(HttpRequest request)
+        public static string GetProviderNameFromRequest(HttpRequest request)
         {
-            return HttpUtility.UrlDecode(request.QueryString[UserIdKey]);
+            return request.QueryString[ProviderNameKey];
         }
 
         public static string GetResetPasswordRedirectUrl(string code, HttpRequest request)
@@ -34,18 +32,19 @@ namespace DrumsAcademy.Authentication
 
         public static string GetUserConfirmationRedirectUrl(string code, string userId, HttpRequest request)
         {
-            var absoluteUri = "/Account/Confirm?" + CodeKey + "=" + HttpUtility.UrlEncode(code) + "&" + UserIdKey + "=" + HttpUtility.UrlEncode(userId);
+            var absoluteUri = "/Account/Confirm?" + CodeKey + "=" + HttpUtility.UrlEncode(code) + "&" + UserIdKey + "="
+                              + HttpUtility.UrlEncode(userId);
             return new Uri(request.Url, absoluteUri).AbsoluteUri.ToString();
         }
 
-        private static bool IsLocalUrl(string url)
+        public static string GetUserIdFromRequest(HttpRequest request)
         {
-            return !string.IsNullOrEmpty(url) && ((url[0] == '/' && (url.Length == 1 || (url[1] != '/' && url[1] != '\\'))) || (url.Length > 1 && url[0] == '~' && url[1] == '/'));
+            return HttpUtility.UrlDecode(request.QueryString[UserIdKey]);
         }
 
         public static void RedirectToReturnUrl(string returnUrl, HttpResponse response)
         {
-            if (!String.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
+            if (!string.IsNullOrEmpty(returnUrl) && IsLocalUrl(returnUrl))
             {
                 response.Redirect(returnUrl);
             }
@@ -53,6 +52,13 @@ namespace DrumsAcademy.Authentication
             {
                 response.Redirect("~/");
             }
+        }
+
+        private static bool IsLocalUrl(string url)
+        {
+            return !string.IsNullOrEmpty(url)
+                   && ((url[0] == '/' && (url.Length == 1 || (url[1] != '/' && url[1] != '\\')))
+                       || (url.Length > 1 && url[0] == '~' && url[1] == '/'));
         }
     }
 }
