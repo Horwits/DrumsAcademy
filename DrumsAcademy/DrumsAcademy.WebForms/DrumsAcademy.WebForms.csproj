@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -60,8 +64,20 @@
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject.Extensions.Factory, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.Extensions.Factory.3.2.1.0\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Interception, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Interception.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Interception.DynamicProxy, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Interception.DynamicProxy.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.DynamicProxy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject.Web, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -200,6 +216,8 @@
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Content\CssModules\align.css" />
+    <Content Include="Resource\Details\ResourceDetails.aspx" />
+    <Content Include="Resource\Resources.aspx" />
     <Content Include="Search\Search.aspx" />
     <Content Include="Teacher\TeacherPanel.aspx" />
     <Content Include="UserControls\OpenAuthProviders.ascx" />
@@ -389,11 +407,26 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\BindingModules\DefaultAuthenticationModule.cs" />
     <Compile Include="App_Start\BindingModules\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="PresenterFactories\ICustomPresenterFactory.cs" />
     <Compile Include="PresenterFactories\WebFormsMvpPresenterFactory.cs" />
+    <Compile Include="Resource\Details\ResourceDetails.aspx.cs">
+      <DependentUpon>ResourceDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource\Details\ResourceDetails.aspx.designer.cs">
+      <DependentUpon>ResourceDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource\Resources.aspx.cs">
+      <DependentUpon>Resources.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resource\Resources.aspx.designer.cs">
+      <DependentUpon>Resources.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Search\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -515,13 +548,33 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Category\" />
     <Folder Include="Models\" />
-    <Folder Include="Resource\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj">
       <Project>{F550C2A6-2D23-4D8C-8050-3C27364441D4}</Project>
       <Name>DrumsAcademy.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Data.Contracts\DrumsAcademy.Data.Contracts.csproj">
+      <Project>{05d9b228-3399-47c4-897e-24f7f871640e}</Project>
+      <Name>DrumsAcademy.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Data\DrumsAcademy.Data.csproj">
+      <Project>{5d017a44-98ea-4ffe-8603-e1e73e2391c3}</Project>
+      <Name>DrumsAcademy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Models\DrumsAcademy.Models.csproj">
+      <Project>{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}</Project>
+      <Name>DrumsAcademy.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Mvp\DrumsAcademy.Mvp.csproj">
+      <Project>{9ee23ee2-e0c2-4727-9d91-444800d52d79}</Project>
+      <Name>DrumsAcademy.Mvp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Services\DrumsAcademy.Services.csproj">
+      <Project>{7a440616-8019-4c92-adb1-620eabf253b7}</Project>
+      <Name>DrumsAcademy.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,7 +1,4 @@
-﻿using System;
-
-using DrumsAcademy.Authentication;
-using DrumsAcademy.Authentication.Factories;
+﻿using DrumsAcademy.Authentication;
 
 using Microsoft.Owin;
 
@@ -16,6 +13,7 @@ namespace DrumsAcademy.Authentication
         public void Configuration(IAppBuilder app)
         {
             RoleActions roleActions = new RoleActions(ApplicationDbContext.Create());
+
             /*roleActions.CreateRole("User");*/
             /*roleActions.AddUserToRole("Admin", "f178cd37-7a28-4e35-9276-9a6d5b2ae3ac");*/
             this.ConfigureAuth(app);

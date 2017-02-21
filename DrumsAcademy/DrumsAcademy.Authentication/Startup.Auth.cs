@@ -1,7 +1,5 @@
 ﻿using System;
 
-using DrumsAcademy.Authentication.Factories;
-
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -20,7 +18,7 @@ namespace DrumsAcademy.Authentication
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            
+
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
             // Configure the sign in cookie
@@ -34,12 +32,25 @@ namespace DrumsAcademy.Authentication
                                 {
                                     OnValidateIdentity =
                                         SecurityStampValidator
-                                            .OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-                                                validateInterval: TimeSpan.FromMinutes(30),
-                                                regenerateIdentity:
+                                            .OnValidateIdentity
+                                            <
+                                                ApplicationUserManager,
+                                                ApplicationUser
+                                            >(
+                                                validateInterval
+                                                :
+                                                TimeSpan
+                                                    .FromMinutes
+                                                    (30),
+                                                regenerateIdentity
+                                                :
                                                 (manager, user)
                                                     =>
-                                                        user.GenerateUserIdentityAsync(manager)) }
+                                                        user
+                                                            .GenerateUserIdentityAsync
+                                                            (
+                                                                manager))
+                                }
                     });
 
             // Use a cookie to temporarily store information about a user logging in with a third party login provider

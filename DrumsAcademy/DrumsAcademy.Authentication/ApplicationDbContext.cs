@@ -6,7 +6,7 @@ namespace DrumsAcademy.Authentication
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DrumsAcademy", throwIfV1Schema: false)
+            : base("DrumsAcademyDB", throwIfV1Schema: false)
         {
         }
 

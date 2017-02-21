@@ -1,11 +1,6 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DrumsAcademy.Services.Tests.Data
+namespace DrumsAcademy.Services.Tests.Data.CategoryService
 {
     [TestFixture]
     public class ConstuctorShould

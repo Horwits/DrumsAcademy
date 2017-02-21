@@ -14,9 +14,12 @@ namespace DrumsAcademy.WebForms.Account
         {
             if (this.IsValid)
             {
+                var owinContext = HttpContext.Current.Request.GetOwinContext();
+
                 // Validate the user password
-                var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = this.Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                var signinManager = owinContext.GetUserManager<ApplicationSignInManager>();
+
+                var manager = owinContext.GetUserManager<ApplicationUserManager>();
 
                 // This doen't count login failures towards account lockout
                 // To enable password failures to trigger lockout, change to shouldLockout: true

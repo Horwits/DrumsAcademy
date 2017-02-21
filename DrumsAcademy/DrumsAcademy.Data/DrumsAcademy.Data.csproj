@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bytes2you.Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a7d501dd757e0442, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bytes2you.Validation.2.0.0.0\lib\portable-win+net40+sl40+wp+Xbox40\Bytes2you.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -50,6 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrumsAcademyContext.cs" />
+    <Compile Include="Migrations\201702211300049_remigrate.cs" />
+    <Compile Include="Migrations\201702211300049_remigrate.Designer.cs">
+      <DependentUpon>201702211300049_remigrate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +66,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj">
+      <Project>{f550c2a6-2d23-4d8c-8050-3c27364441d4}</Project>
+      <Name>DrumsAcademy.Authentication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DrumsAcademy.Common\DrumsAcademy.Common.csproj">
       <Project>{F377A03D-159D-46E1-BDD2-A0E83468E0F5}</Project>
       <Name>DrumsAcademy.Common</Name>
@@ -70,6 +82,11 @@
       <Project>{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}</Project>
       <Name>DrumsAcademy.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702211300049_remigrate.resx">
+      <DependentUpon>201702211300049_remigrate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

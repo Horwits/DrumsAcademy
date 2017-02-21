@@ -8,14 +8,18 @@ namespace DrumsAcademy.Models
 {
     public class Resource
     {
-        public Guid Id { get; set; }
-
-        public string Author { get; set; } // this has to be user ->
+        public virtual Category Category { get; set; }
 
         [Required]
         [MinLength(10)]
         [MaxLength(500)]
         public string Description { get; set; }
+
+        [Key]
+        public Guid Id { get; set; }
+
+        [Required]
+        public LevelType Level { get; set; }
 
         [Required]
         [MinLength(5)]
@@ -27,13 +31,6 @@ namespace DrumsAcademy.Models
         public ResourceType Type { get; set; }
 
         [Required]
-        public LevelType Level { get; set; }
-
-        [Required]
         public string Url { get; set; }
-
-        public virtual Category Category { get; set; }
-
-        public Guid CategoryId { get; set; }
     }
 }

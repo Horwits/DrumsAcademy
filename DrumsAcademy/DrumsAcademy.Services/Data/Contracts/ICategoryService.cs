@@ -7,17 +7,17 @@ namespace DrumsAcademy.Services.Data.Contracts
 {
     public interface ICategoryService
     {
-        IQueryable<Category> GetAllCategoriesWithResourcesIncluded();
-
-        IQueryable<Category> GetAllCategoriesSortedByType();
-
-        IQueryable<Category> GetAllCategoriesSortedById();
-
-        Category GetById(Guid id);
-
         int AddCategory(Category category);
 
         int DeleteCategory(Guid categoryId);
+
+        IQueryable<Category> GetAllCategoriesSortedById();
+
+        IQueryable<Category> GetAllCategoriesSortedByType();
+
+        IQueryable<Category> GetAllCategoriesWithResourcesIncluded();
+
+        Category GetById(Guid id);
 
         int UpdateCategory(Category category);
     }

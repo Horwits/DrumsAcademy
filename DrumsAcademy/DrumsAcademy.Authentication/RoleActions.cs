@@ -1,8 +1,6 @@
-using System;
 using System.Linq;
 
 using DrumsAcademy.Authentication.Contracts;
-using DrumsAcademy.Authentication.Contracts.Factories;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -18,17 +16,28 @@ namespace DrumsAcademy.Authentication
         {
             this.applicationContextFactory = applicationContextFactory;
         }*/
-
         public RoleActions(IdentityDbContext<ApplicationUser> context)
         {
             this.context = context;
         }
 
+        public void AddUserToRole(string role, string userId)
+        {
+            using (this.context)
+            {
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.context));
+
+                var user = this.context.Users.SingleOrDefault(x => x.Id == userId);
+
+                var identityUserResult = userManager.AddToRole(user.Id, role);
+
+                this.context.SaveChanges();
+            }
+        }
 
         public void CreateRole(string role)
         {
             /*this.context = this.applicationContextFactory.GetApplicationDbContext();*/
-
             using (this.context)
             {
                 IdentityRole identityRole = new IdentityRole(role);
@@ -52,21 +61,6 @@ namespace DrumsAcademy.Authentication
                         throw new Exception("Role assignment is not successfull.");
                     }
                 }*/
-
-                this.context.SaveChanges();
-            }
-        }
-
-        public void AddUserToRole(string role, string userId)
-        {
-            using (this.context)
-            {
-                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(this.context));
-
-                var user = this.context.Users.SingleOrDefault(x => x.Id == userId);
-
-                var identityUserResult = userManager.AddToRole(user.Id, role);
-
                 this.context.SaveChanges();
             }
         }

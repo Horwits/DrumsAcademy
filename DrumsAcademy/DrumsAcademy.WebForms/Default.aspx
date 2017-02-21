@@ -16,7 +16,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h2>We have a plan</h2>
             <p>
                 We have created a plan for the beginners and also every drummer who wants to learn something new.
@@ -25,22 +25,13 @@
                 <a class="btn btn-default" href="~/Plan/Plan.aspx" runat="server">Check it out &raquo;</a>
             </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h2>Just sign up</h2>
             <p>
                 It's free!
             </p>
             <p>
                 <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Sign up for free &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>This is our top teacher!</h2>
-            <p>
-                Top teacher profile picture and username. + link to profile
-            </p>
-            <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Profile &raquo;</a>
             </p>
         </div>
     </div>

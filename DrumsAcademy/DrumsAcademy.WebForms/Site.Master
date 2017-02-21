@@ -46,16 +46,17 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" id="adminLink" href="~/Admin/AdminPanel.aspx">Admin</a></li>
-                        <li><a runat="server" id="teacherLink" href="~/Teacher/TeacherPanel.aspx">Teacher</a></li>
+                        <li><a runat="server" href="~/about">About</a></li>
+                        <li><a runat="server" href="~/contact">Contact</a></li>
+                        <li><a runat="server" id="a1" href="~/resource/resources.aspx">Resources</a></li>
+                        <li><a runat="server" id="adminLink" href="~/admin/adminpanel.aspx">Admin</a></li>
+                        <li><a runat="server" id="teacherLink" href="~/teacher/teacherpanel.aspx">Teacher</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/account/register.aspx">Register</a></li>
+                                <li><a runat="server" href="~/account/login.aspx">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

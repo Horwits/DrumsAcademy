@@ -15,9 +15,9 @@ namespace DrumsAcademy.Models
 
         public Guid Id { get; set; }
 
+        public virtual IEnumerable<Resource> Resources { get; set; }
+
         [Required]
         public CategoryType Type { get; set; }
-
-        public virtual IEnumerable<Resource> Resources { get; set; }
     }
 }

@@ -18,13 +18,9 @@ namespace DrumsAcademy.WebForms.BindingModules
     {
         public override void Load()
         {
-            this.Bind<IPresenterFactory>()
-                .To<WebFormsMvpPresenterFactory>()
-                .InSingletonScope();
+            this.Bind<IPresenterFactory>().To<WebFormsMvpPresenterFactory>().InSingletonScope();
 
-            this.Bind<ICustomPresenterFactory>()
-                .ToFactory()
-                .InSingletonScope();
+            this.Bind<ICustomPresenterFactory>().ToFactory().InSingletonScope();
 
             this.Bind<IPresenter>()
                 .ToMethod(this.GetPresenterFactoryMethod)

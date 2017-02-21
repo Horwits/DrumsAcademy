@@ -24,20 +24,20 @@ namespace DrumsAcademy.Authentication
 
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
-            {
-                AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
-            };
+                                        {
+                                            AllowOnlyAlphanumericUserNames = false,
+                                            RequireUniqueEmail = true
+                                        };
 
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
-            {
-                /* RequiredLength = 6,
-                                                                                                                                                                                RequireNonLetterOrDigit = true,
-                                                                                                                                                                                RequireDigit = true,
-                                                                                                                                                                                RequireLowercase = true,
-                                                                                                                                                                                RequireUppercase = true,*/
-            };
+                                            {
+                                                /* RequiredLength = 6,
+                                                                                                                                                                                                                                                                                RequireNonLetterOrDigit = true,
+                                                                                                                                                                                                                                                                                RequireDigit = true,
+                                                                                                                                                                                                                                                                                RequireLowercase = true,
+                                                                                                                                                                                                                                                                                RequireUppercase = true,*/
+                                            };
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
@@ -47,15 +47,15 @@ namespace DrumsAcademy.Authentication
             manager.RegisterTwoFactorProvider(
                 "Email Code",
                 new EmailTokenProvider<ApplicationUser>
-                {
-                    Subject = "Security Code",
-                    BodyFormat = "Your security code is {0}"
-                });
+                    {
+                        Subject = "Security Code",
+                        BodyFormat = "Your security code is {0}"
+                    });
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
-            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
-            manager.MaxFailedAccessAttemptsBeforeLockout = 5;
+            manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(0);
+            manager.MaxFailedAccessAttemptsBeforeLockout = 55;
             manager.EmailService = new EmailService();
             manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
