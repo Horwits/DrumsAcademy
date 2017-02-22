@@ -23,7 +23,7 @@ namespace DrumsAcademy.Mvp.Tests.Resource.ResourcePresenter
             var viewMock = new Mock<IResourcesView>();
             viewMock.Setup(v => v.Model).Returns(new ResourceViewModel());
 
-            var resources = this.GetResourcesWithBooks();
+            var resources = this.GetCategoriesWithResources();
             var resourceServiceMock = new Mock<IResourceService>();
             resourceServiceMock.Setup(c => c.GetAllResources()).Returns(resources);
 
@@ -36,7 +36,7 @@ namespace DrumsAcademy.Mvp.Tests.Resource.ResourcePresenter
             CollectionAssert.AreEquivalent(resources, viewMock.Object.Model.Resources);
         }
 
-        private IQueryable<Models.Resource> GetResourcesWithBooks()
+        private IQueryable<Models.Resource> GetCategoriesWithResources()
         {
             return
                 new List<Models.Resource>()

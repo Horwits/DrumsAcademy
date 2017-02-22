@@ -35,7 +35,7 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
             var numberOfRowsAffected = categoryService.DeleteCategory(categoryId);
 
             // Assert
-            /*CollectionAssert.DoesNotContain(categoryResult, category);*/
+            CollectionAssert.DoesNotContain(categorySetMock.Object, category);
             Assert.AreEqual(numberOfRowsAffected, 1);
         }
 
