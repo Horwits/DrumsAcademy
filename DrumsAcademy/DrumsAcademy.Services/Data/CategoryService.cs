@@ -19,16 +19,6 @@ namespace DrumsAcademy.Services.Data
             this.context = context;
         }
 
-        public IQueryable<Category> GetAllCategoriesSortedById()
-        {
-            return this.context.Categories.OrderBy(c => c.Id);
-        }
-
-        public Category GetById(Guid id)
-        {
-            return this.context.Categories.Find(id);
-        }
-
         public int AddCategory(Category category)
         {
             Guard.WhenArgument(category, "category").IsNull().Throw();
@@ -43,6 +33,16 @@ namespace DrumsAcademy.Services.Data
             this.context.Categories.Remove(category);
 
             return this.context.SaveChanges();
+        }
+
+        public IQueryable<Category> GetAllCategoriesSortedById()
+        {
+            return this.context.Categories.OrderBy(c => c.Id);
+        }
+
+        public Category GetById(Guid id)
+        {
+            return this.context.Categories.Find(id);
         }
 
         public int UpdateCategory(Category category)

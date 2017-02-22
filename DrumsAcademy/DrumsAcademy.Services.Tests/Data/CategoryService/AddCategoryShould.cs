@@ -17,17 +17,6 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
     public class AddCategoryShould
     {
         [Test]
-        public void Throw_ArgumentNullException_When_NullIsPassed()
-        {
-            // Arrange
-            var fakeDrumsAcademyContext = new Mock<IDrumsAcademyContext>();
-            var sut = new Services.Data.CategoryService(fakeDrumsAcademyContext.Object);
-
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => sut.AddCategory(null));
-        }
-
-        [Test]
         public void Add_CategoryToDbSetCategories_When_Valid()
         {
             // Arrange
@@ -51,9 +40,21 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
             Assert.AreEqual(categoriesCount, fakeCategoriesDbSet.Count());
         }
 
+        [Test]
+        public void Throw_ArgumentNullException_When_NullIsPassed()
+        {
+            // Arrange
+            var fakeDrumsAcademyContext = new Mock<IDrumsAcademyContext>();
+            var sut = new Services.Data.CategoryService(fakeDrumsAcademyContext.Object);
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => sut.AddCategory(null));
+        }
+
         private IList<Category> GetCategories()
         {
-            var categories = new List<Category> {
+            var categories = new List<Category>
+                                 {
                                      new Category() { Id = Guid.NewGuid(), Type = CategoryType.Hand },
                                      new Category() { Id = Guid.NewGuid(), Type = CategoryType.Feet }
                                  };

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 
 using DrumsAcademy.Common.Enums;
 using DrumsAcademy.Data.Contracts.DbContext;
 using DrumsAcademy.Models;
-using DrumsAcademy.Services.Tests.Mocks;
 
 using Moq;
 
@@ -30,7 +28,7 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
             var category = new Category { Id = categoryId };
 
             categorySetMock.Setup(b => b.Find(categoryId)).Returns(category);
-            
+
             var categoryService = new Services.Data.CategoryService(contextMock.Object);
 
             // Act
@@ -43,7 +41,8 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
 
         private IList<Category> GetCategories()
         {
-            var categories = new List<Category> {
+            var categories = new List<Category>
+                                 {
                                      new Category() { Id = Guid.NewGuid(), Type = CategoryType.Hand },
                                      new Category() { Id = Guid.NewGuid(), Type = CategoryType.Feet }
                                  };

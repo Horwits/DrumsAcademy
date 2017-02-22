@@ -65,10 +65,10 @@ namespace DrumsAcademy.WebForms
                 this.Page.ViewStateUserKey = this._antiXsrfTokenValue;
 
                 var responseCookie = new HttpCookie(AntiXsrfTokenKey)
-                {
-                    HttpOnly = true,
-                    Value = this._antiXsrfTokenValue
-                };
+                                         {
+                                             HttpOnly = true,
+                                             Value = this._antiXsrfTokenValue
+                                         };
                 if (FormsAuthentication.RequireSSL && this.Request.IsSecureConnection)
                 {
                     responseCookie.Secure = true;

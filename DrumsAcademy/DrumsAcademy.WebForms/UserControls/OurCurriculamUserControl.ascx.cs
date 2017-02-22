@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace DrumsAcademy.WebForms.UserControls
 {
-    public partial class OurCurriculumUserControl : System.Web.UI.UserControl
+    public partial class OurCurriculumUserControl : UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

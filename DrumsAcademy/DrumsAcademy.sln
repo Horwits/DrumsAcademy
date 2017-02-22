@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Services", "Dr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Services.Tests", "DrumsAcademy.Services.Tests\DrumsAcademy.Services.Tests.csproj", "{14AA4749-A1EA-4F3C-A2CD-01C762480278}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumsAcademy.Mvp.Tests", "DrumsAcademy.Mvp.Tests\DrumsAcademy.Mvp.Tests.csproj", "{256164AD-6574-4BDB-8175-3AC1493EDB10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{14AA4749-A1EA-4F3C-A2CD-01C762480278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14AA4749-A1EA-4F3C-A2CD-01C762480278}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14AA4749-A1EA-4F3C-A2CD-01C762480278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256164AD-6574-4BDB-8175-3AC1493EDB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256164AD-6574-4BDB-8175-3AC1493EDB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256164AD-6574-4BDB-8175-3AC1493EDB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256164AD-6574-4BDB-8175-3AC1493EDB10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,5 +108,6 @@ Global
 		{04942F55-5D3E-415E-B2C6-3BC09E8B79C7} = {A7EABFC6-4D7F-4B12-9BC6-DA832785B36D}
 		{7A440616-8019-4C92-ADB1-620EABF253B7} = {15282AF2-5BD8-42FA-9FA7-D7BCD1ED0A68}
 		{14AA4749-A1EA-4F3C-A2CD-01C762480278} = {D0BCA221-3F78-44D5-9197-F74AD44F2B59}
+		{256164AD-6574-4BDB-8175-3AC1493EDB10} = {D0BCA221-3F78-44D5-9197-F74AD44F2B59}
 	EndGlobalSection
 EndGlobal

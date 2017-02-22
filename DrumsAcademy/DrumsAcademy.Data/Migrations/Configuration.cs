@@ -1,15 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
+using System.Linq;
 
 using DrumsAcademy.Common.Enums;
 using DrumsAcademy.Models;
 
 namespace DrumsAcademy.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
     public sealed class Configuration : DbMigrationsConfiguration<DrumsAcademyContext>
     {
         public Configuration()
@@ -81,99 +79,14 @@ namespace DrumsAcademy.Data.Migrations
                                                     {
                                                         Id = Guid.NewGuid(),
                                                         Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
+                                                        Title = "6/8th Note Blast Beats!",
                                                         Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
+                                                            "Triplet Blast Beats! In this video I play blast beats in a 6/8th note pattern at 210 bpm, also some fill ins, some double bass,Enjoy!",
+                                                        Level = LevelType.Advanced,
                                                         Category = categories[2],
                                                         Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
-
-                                                new Resource()
-                                                    {
-                                                        Id = Guid.NewGuid(),
-                                                        Type = ResourceType.Video,
-                                                        Title =
-                                                            "How to play 7/8 on drums and be musical",
-                                                        Description =
-                                                            "Easing into odd time signature. In this case 7/8. It\'s important to make your odd time drumming pattern sound musical with a strong pulse.",
-                                                        Level = LevelType.Intermediate,
-                                                        Category = categories[2],
-                                                        Url =
-                                                            "https://www.youtube.com/watch?v=k_ip7fiRGeU"
-                                                    },
+                                                            "https://www.youtube.com/watch?v=Yi1VHNTl8U8"
+                                                    }
                                             };
 
             context.Resources.AddOrUpdate(resources.ToArray());

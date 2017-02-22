@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 
-using DrumsAcademy.Common.Enums;
 using DrumsAcademy.Data.Contracts.DbContext;
 using DrumsAcademy.Models;
 
@@ -48,7 +45,7 @@ namespace DrumsAcademy.Services.Tests.Data.CategoryService
             categorySetMock.Setup(b => b.Find(categoryId)).Returns(category);
 
             var categoryService = new Services.Data.CategoryService(contextMock.Object);
-            
+
             // Act
             var categoryResult = categoryService.GetById(categoryId);
 
