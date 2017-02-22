@@ -1,2 +1,2 @@
 # DrumsAcademy
-Drumming learning system
+Community-based learning system.
