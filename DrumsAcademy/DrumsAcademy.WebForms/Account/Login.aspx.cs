@@ -64,7 +64,6 @@ namespace DrumsAcademy.WebForms.Account
 
             // Enable this once you have account confirmation enabled for password reset functionality
             // ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-            this.OpenAuthLogin.ReturnUrl = this.Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(this.Request.QueryString["ReturnUrl"]);
             if (!string.IsNullOrEmpty(returnUrl))
             {
