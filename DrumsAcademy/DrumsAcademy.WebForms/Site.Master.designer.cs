@@ -13,13 +13,13 @@ namespace DrumsAcademy.WebForms {
     public partial class SiteMaster {
         
         /// <summary>
-        /// a1 control.
+        /// resourceLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor a1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor resourceLink;
         
         /// <summary>
         /// adminLink control.

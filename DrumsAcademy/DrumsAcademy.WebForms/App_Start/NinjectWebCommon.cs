@@ -5,6 +5,8 @@ using System.Web.Security;
 
 using DrumsAcademy.Data;
 using DrumsAcademy.Data.Contracts.DbContext;
+using DrumsAcademy.Services.Auth;
+using DrumsAcademy.Services.Auth.Contracts;
 using DrumsAcademy.Services.Data;
 using DrumsAcademy.Services.Data.Contracts;
 using DrumsAcademy.WebForms.BindingModules;
@@ -82,6 +84,7 @@ namespace DrumsAcademy.WebForms.App_Start
 
             kernel.Bind<IResourceService>().To<ResourceService>();
             kernel.Bind<ICategoryService>().To<CategoryService>();
+            kernel.Bind<IUserAccountService>().To<UserAccountService>();
         }
     }
 }

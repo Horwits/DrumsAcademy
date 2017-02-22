@@ -11,14 +11,10 @@
     height: 22px;
 }
 
-.ul-actions-menu {
+.ul-actions-menu , table{
     margin: 0 auto;
 }
 
 .btn-margin {
     margin: 10px 0;
-}
-
-.center-text {
-    text-align: center;
 }

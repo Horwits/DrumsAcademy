@@ -8,7 +8,7 @@ namespace DrumsAcademy.Services.Data.Contracts
 {
     public interface IResourceService
     {
-        int DeleteResource(Guid resourceId);
+        int DeleteResource(Guid? resourceId);
 
         IQueryable<Resource> GetAllResources();
 

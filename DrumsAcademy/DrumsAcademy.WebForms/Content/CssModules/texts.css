@@ -14,15 +14,19 @@ body {
     font-family: gill-sans-mt-58a6f4012b58f, Calibri, Trebuchet, sans-serif;
 }
 
-div, footer {
+.body-content {
+    font-size: 18px;
+}
+
+div, footer, .center-text, .about-page-container > p.row {
     text-align: center;
 }
 
-.nav.navbar-nav li a , .jumbotron p, .jumbotron h1, .jumbotron h2, .jumbotron a {
+.nav.navbar-nav li a, .jumbotron p, .jumbotron h1, .jumbotron h2, .jumbotron a {
     color: #fdf5e6;
 }
 
-   .nav.navbar-nav li a:hover {
+    .nav.navbar-nav li a:hover {
         color: #2bbbff;
     }
 

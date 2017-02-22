@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace DrumsAcademy.Mvp.Resource.Details
 {
-    public class ResourceEventArgs : EventArgs
+    public class IdEventArgs : EventArgs
     {
-        public ResourceEventArgs(Guid? id)
+        public IdEventArgs(Guid? id)
         {
             this.Id = id;
         }

@@ -16,7 +16,7 @@ namespace DrumsAcademy.Mvp.Resource.Details
             this.View.OnGetResource += this.On_GetResource;
         }
 
-        private void On_GetResource(object sender, ResourceEventArgs e)
+        private void On_GetResource(object sender, IdEventArgs e)
         {
             this.View.Model.Resource = this.service.GetResourceById(e.Id);
         }

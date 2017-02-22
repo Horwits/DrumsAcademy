@@ -21,7 +21,7 @@ namespace DrumsAcademy.Services.Data
             this.context = context;
         }
 
-        public int DeleteResource(Guid resourceId)
+        public int DeleteResource(Guid? resourceId)
         {
             var resourceToDelete = this.context.Resources.Find(resourceId);
             this.context.Resources.Remove(resourceToDelete);

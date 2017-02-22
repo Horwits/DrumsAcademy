@@ -511,7 +511,7 @@
 .fa-exclamation-triangle:before {
   content: "\f071";
 }
-.fa-plane:before {
+.fa-curriculume:before {
   content: "\f072";
 }
 .fa-calendar:before {
@@ -1539,11 +1539,11 @@
   content: "\f1d7";
 }
 .fa-send:before,
-.fa-paper-plane:before {
+.fa-paper-curriculume:before {
   content: "\f1d8";
 }
 .fa-send-o:before,
-.fa-paper-plane-o:before {
+.fa-paper-curriculume-o:before {
   content: "\f1d9";
 }
 .fa-history:before {

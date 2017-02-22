@@ -2,6 +2,8 @@
 using System.Data.Entity;
 using System.Linq;
 
+using Bytes2you.Validation;
+
 using DrumsAcademy.Data.Contracts.DbContext;
 using DrumsAcademy.Models;
 using DrumsAcademy.Services.Data.Contracts;
@@ -17,8 +19,19 @@ namespace DrumsAcademy.Services.Data
             this.context = context;
         }
 
+        public IQueryable<Category> GetAllCategoriesSortedById()
+        {
+            return this.context.Categories.OrderBy(c => c.Id);
+        }
+
+        public Category GetById(Guid id)
+        {
+            return this.context.Categories.Find(id);
+        }
+
         public int AddCategory(Category category)
         {
+            Guard.WhenArgument(category, "category").IsNull().Throw();
             this.context.Categories.Add(category);
 
             return this.context.SaveChanges();
@@ -30,26 +43,6 @@ namespace DrumsAcademy.Services.Data
             this.context.Categories.Remove(category);
 
             return this.context.SaveChanges();
-        }
-
-        public IQueryable<Category> GetAllCategoriesSortedById()
-        {
-            return this.context.Categories.OrderBy(c => c.Id);
-        }
-
-        public IQueryable<Category> GetAllCategoriesSortedByType()
-        {
-            return this.context.Categories.OrderBy(c => c.Type);
-        }
-
-        public IQueryable<Category> GetAllCategoriesWithResourcesIncluded()
-        {
-            return this.context.Categories.Include(r => r.Resources);
-        }
-
-        public Category GetById(Guid id)
-        {
-            return this.context.Categories.SingleOrDefault(c => c.Id == id);
         }
 
         public int UpdateCategory(Category category)

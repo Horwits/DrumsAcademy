@@ -52,7 +52,7 @@ namespace DrumsAcademy.WebForms.Account
                 if (message != null)
                 {
                     // Strip the query string from action
-                    this.Form.Action = this.ResolveUrl("~/Account/Manage");
+                    this.Form.Action = this.ResolveUrl("~/account/manage.aspx");
 
                     this.SuccessMessage = message == "ChangePwdSuccess"
                                               ? "Your password has been changed."
@@ -85,7 +85,7 @@ namespace DrumsAcademy.WebForms.Account
             if (user != null)
             {
                 signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                this.Response.Redirect("/Account/Manage?m=RemovePhoneNumberSuccess");
+                this.Response.Redirect("/account/manage.aspx?m=RemovePhoneNumberSuccess");
             }
         }
 
@@ -95,7 +95,7 @@ namespace DrumsAcademy.WebForms.Account
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             manager.SetTwoFactorEnabled(this.User.Identity.GetUserId(), false);
 
-            this.Response.Redirect("/Account/Manage");
+            this.Response.Redirect("/account/manage.aspx");
         }
 
         // EnableTwoFactorAuthentication 
@@ -104,7 +104,7 @@ namespace DrumsAcademy.WebForms.Account
             var manager = this.Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             manager.SetTwoFactorEnabled(this.User.Identity.GetUserId(), true);
 
-            this.Response.Redirect("/Account/Manage");
+            this.Response.Redirect("/account/manage.aspx");
         }
 
         private void AddErrors(IdentityResult result)

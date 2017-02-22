@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="DrumsAcademy.WebForms._Default" %>
-<%@ Import Namespace="System.Web.DynamicData" %>
-<%@ Import Namespace="System.Web.UI" %>
-<%@ Import Namespace="System.Web.UI.WebControls" %>
-<%@ Import Namespace="System.Web.UI.WebControls" %>
-<%@ Import Namespace="System.Web.UI.WebControls.Expressions" %>
-<%@ Import Namespace="System.Web.UI.WebControls.WebParts" %>
+
+<%@ Register TagPrefix="ucc" TagName="OurCurriculum" Src="/UserControls/OurCurriculamUserControl.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -17,13 +13,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            <h2>We have a plan</h2>
-            <p>
-                We have created a plan for the beginners and also every drummer who wants to learn something new.
-            </p>
-            <p>
-                <a class="btn btn-default" href="~/Plan/Plan.aspx" runat="server">Check it out &raquo;</a>
-            </p>
+            <ucc:OurCurriculum ID="OurCurriculumId" runat="server" />
         </div>
         <div class="col-md-6">
             <h2>Just sign up</h2>

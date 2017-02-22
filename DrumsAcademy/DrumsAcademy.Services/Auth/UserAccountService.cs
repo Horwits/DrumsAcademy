@@ -52,6 +52,22 @@ namespace DrumsAcademy.Services.Auth
             return this.context.SaveChanges();
         }
 
+        public IQueryable<ApplicationUser> GetAllUsers()
+        {
+            var result = this.context.Users;
+            Guard.WhenArgument(result, "users").IsNull().Throw();
+
+            return result;
+        }
+
+        public IQueryable<ApplicationUser> GetTopFiveUsers()
+        {
+            var result = this.context.Users.Take(5);
+            Guard.WhenArgument(result, "users").IsNull().Throw();
+
+            return result;
+        }
+
         public ApplicationUser GetUserByEmail(string email)
         {
             var user = this.context.Users.SingleOrDefault(x => x.Email.Contains(email));
@@ -60,21 +76,6 @@ namespace DrumsAcademy.Services.Auth
             return user;
         }
 
-        /* public IQueryable<ApplicationUser> GetAllUsers()
-        {
-            var result = this.context.Users.Include(x => x.Resources);
-            Guard.WhenArgument(result, "users").IsNull().Throw();
-
-            return result;
-        }
-
-        public IQueryable<ApplicationUser> GetTopFiveUsers()
-        {
-            var result = this.context.Users.Include(x => x.Resources).Take(5);
-            Guard.WhenArgument(result, "users").IsNull().Throw();
-
-            return result;
-        }*/
         public ApplicationUser GetUserById(Guid? id)
         {
             var user = this.context.Users.Find(id);

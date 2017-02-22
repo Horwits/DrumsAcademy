@@ -13,10 +13,6 @@ namespace DrumsAcademy.Services.Data.Contracts
 
         IQueryable<Category> GetAllCategoriesSortedById();
 
-        IQueryable<Category> GetAllCategoriesSortedByType();
-
-        IQueryable<Category> GetAllCategoriesWithResourcesIncluded();
-
         Category GetById(Guid id);
 
         int UpdateCategory(Category category);

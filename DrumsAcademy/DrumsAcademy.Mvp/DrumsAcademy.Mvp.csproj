@@ -48,23 +48,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddNewCategory\AddCategoryPresenter.cs" />
+    <Compile Include="Admin\AddNewCategory\CategoryControlViewModel.cs" />
+    <Compile Include="Admin\AddNewCategory\CategoryEventArgs.cs" />
+    <Compile Include="Admin\AddRoleToUser\IAddRoleToUserPrsenter.cs" />
+    <Compile Include="Admin\AddNewCategory\ICategoryControlView.cs" />
+    <Compile Include="Admin\AddRoleToUser\AddRoleToUserControlViewModel.cs" />
+    <Compile Include="Admin\AddRoleToUser\AddRoleToUserPrsenter.cs" />
+    <Compile Include="Admin\AddRoleToUser\ApplicationUserEventArgs.cs" />
+    <Compile Include="Admin\AddRoleToUser\IAddRoleToUserView.cs" />
+    <Compile Include="Categories\AddNewCategory\AddNewCategoryControlViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource\Details\IResourceDetailsView.cs" />
-    <Compile Include="Resource\Details\ResourceEventArgs.cs" />
+    <Compile Include="IdEventArgs.cs" />
     <Compile Include="Resource\Details\ResourceDetailsPresenter.cs" />
     <Compile Include="Resource\Details\ResourceDetailsViewModel.cs" />
     <Compile Include="Resource\IResourcesView.cs" />
+    <Compile Include="Resource\ResourceEventArgs.cs" />
     <Compile Include="Resource\ResourcePresenter.cs" />
     <Compile Include="Resource\ResourceViewModel.cs" />
+    <Compile Include="Resource\TitleEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\" />
-    <Folder Include="Admin\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj">
+      <Project>{F550C2A6-2D23-4D8C-8050-3C27364441D4}</Project>
+      <Name>DrumsAcademy.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Common\DrumsAcademy.Common.csproj">
+      <Project>{F377A03D-159D-46E1-BDD2-A0E83468E0F5}</Project>
+      <Name>DrumsAcademy.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DrumsAcademy.Models\DrumsAcademy.Models.csproj">
       <Project>{69FFE1AE-7AC8-4520-BBF1-AF735A2FCE38}</Project>
       <Name>DrumsAcademy.Models</Name>

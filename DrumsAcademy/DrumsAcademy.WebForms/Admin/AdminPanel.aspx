@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="Admin Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="DrumsAcademy.WebForms.Admin.AdminPanel" %>
 
+<%@ Register TagPrefix="ucc" TagName="AddRoles" Src="/UserControls/AddRoleToUser.ascx" %>
+<%@ Register TagPrefix="ucc" TagName="AddCategory" Src="/UserControls/AddCategoryViewControl.ascx" %>
+
+
 <%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h1><%: this.Page.Title %></h1>
@@ -21,7 +25,7 @@
                             </button>
                         </Header>
                         <Content>
-                            Lorem ipsum dolor sit amet
+                            <%--<ucc:AddRoles ID="CUC" runat="server"/>--%>
                         </Content>
                     </asp:AccordionPane>
                     <asp:AccordionPane runat="server" CssClass="btn" ID="AccordionPane2">
@@ -41,7 +45,7 @@
                             </button>
                         </Header>
                         <Content>
-                            Lorem ipsum dolor sit amet
+                            <ucc:AddCategory ID="AddCategoryId" runat="server"/>
                         </Content>
                     </asp:AccordionPane>
                     <asp:AccordionPane runat="server" CssClass="btn" ID="AccordionPane4">

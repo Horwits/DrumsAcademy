@@ -20,28 +20,11 @@ namespace DrumsAcademy.WebForms
         {
             if (this.Context.User.Identity.IsAuthenticated)
             {
-                if (this.Context.User.IsInRole("Admin"))
-                {
-                    this.Response.Redirect("Admin/AdminPanel.aspx");
-                }
-                else if (this.Context.User.IsInRole("Teacher"))
-                {
-                    this.Response.Redirect("Teacher/ManageTeacherAccount.aspx");
-                }
-                else
-                {
-                    this.Response.RedirectLocation = "Account/Manage.aspx";
-
-                    var url = HttpContext.Current.Request.Url.AbsolutePath;
-                    if (!url.Contains("Account"))
-                    {
-                        this.Response.Redirect(this.Response.RedirectLocation);
-                    }
-                }
+                this.Response.Redirect("~/account/manage.aspx");
             }
             else
             {
-                this.Response.Redirect("Account/Login.aspx");
+                this.Response.Redirect("account/login.aspx");
             }
         }
 
@@ -82,10 +65,10 @@ namespace DrumsAcademy.WebForms
                 this.Page.ViewStateUserKey = this._antiXsrfTokenValue;
 
                 var responseCookie = new HttpCookie(AntiXsrfTokenKey)
-                                         {
-                                             HttpOnly = true,
-                                             Value = this._antiXsrfTokenValue
-                                         };
+                {
+                    HttpOnly = true,
+                    Value = this._antiXsrfTokenValue
+                };
                 if (FormsAuthentication.RequireSSL && this.Request.IsSecureConnection)
                 {
                     responseCookie.Secure = true;
@@ -101,6 +84,12 @@ namespace DrumsAcademy.WebForms
         {
             this.adminLink.Visible = false;
             this.teacherLink.Visible = false;
+            this.resourceLink.Visible = false;
+
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                this.resourceLink.Visible = true;
+            }
 
             if (HttpContext.Current.User.IsInRole("Admin"))
             {

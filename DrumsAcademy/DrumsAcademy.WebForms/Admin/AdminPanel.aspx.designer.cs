@@ -49,6 +49,15 @@ namespace DrumsAcademy.WebForms.Admin {
         protected global::AjaxControlToolkit.AccordionPane AccordionPane3;
         
         /// <summary>
+        /// AddCategoryId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DrumsAcademy.WebForms.UserControls.AddCategoryViewControl AddCategoryId;
+        
+        /// <summary>
         /// AccordionPane4 control.
         /// </summary>
         /// <remarks>

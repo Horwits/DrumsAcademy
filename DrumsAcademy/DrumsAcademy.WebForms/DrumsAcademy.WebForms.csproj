@@ -220,12 +220,12 @@
     <Content Include="Resource\Resources.aspx" />
     <Content Include="Search\Search.aspx" />
     <Content Include="Teacher\TeacherPanel.aspx" />
+    <Content Include="UserControls\AddCategoryViewControl.ascx" />
     <Content Include="UserControls\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Admin\todo-list.txt" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -270,7 +270,7 @@
     <Content Include="fonts\OldEnglishFive.ttf" />
     <Content Include="fonts\gill-sans-mt-58a6f4012b58f.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Plan\Plan.aspx" />
+    <Content Include="Curriculum\Curriculum.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -305,7 +305,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="Teacher\to-do-list.txt" />
-    <Content Include="UserControls\AddUserToRole.ascx" />
+    <Content Include="UserControls\AddRoleToUser.ascx" />
+    <Content Include="UserControls\OurCurriculamUserControl.ascx" />
     <Content Include="User\Default.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -441,6 +442,13 @@
     <Compile Include="Teacher\TeacherPanel.aspx.designer.cs">
       <DependentUpon>TeacherPanel.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddCategoryViewControl.ascx.cs">
+      <DependentUpon>AddCategoryViewControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddCategoryViewControl.ascx.designer.cs">
+      <DependentUpon>AddCategoryViewControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\OpenAuthProviders.ascx.cs">
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -502,12 +510,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Plan\Plan.aspx.cs">
-      <DependentUpon>Plan.aspx</DependentUpon>
+    <Compile Include="Curriculum\Curriculum.aspx.cs">
+      <DependentUpon>Curriculum.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Plan\Plan.aspx.designer.cs">
-      <DependentUpon>Plan.aspx</DependentUpon>
+    <Compile Include="Curriculum\Curriculum.aspx.designer.cs">
+      <DependentUpon>Curriculum.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -524,12 +532,19 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\AddUserToRole.ascx.cs">
-      <DependentUpon>AddUserToRole.ascx</DependentUpon>
+    <Compile Include="UserControls\AddRoleToUser.ascx.cs">
+      <DependentUpon>AddRoleToUser.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\AddUserToRole.ascx.designer.cs">
-      <DependentUpon>AddUserToRole.ascx</DependentUpon>
+    <Compile Include="UserControls\AddRoleToUser.ascx.designer.cs">
+      <DependentUpon>AddRoleToUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OurCurriculamUserControl.ascx.cs">
+      <DependentUpon>OurCurriculamUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OurCurriculamUserControl.ascx.designer.cs">
+      <DependentUpon>OurCurriculamUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="User\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -555,6 +570,10 @@
     <ProjectReference Include="..\DrumsAcademy.Authentication\DrumsAcademy.Authentication.csproj">
       <Project>{F550C2A6-2D23-4D8C-8050-3C27364441D4}</Project>
       <Name>DrumsAcademy.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumsAcademy.Common\DrumsAcademy.Common.csproj">
+      <Project>{F377A03D-159D-46E1-BDD2-A0E83468E0F5}</Project>
+      <Name>DrumsAcademy.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\DrumsAcademy.Data.Contracts\DrumsAcademy.Data.Contracts.csproj">
       <Project>{05d9b228-3399-47c4-897e-24f7f871640e}</Project>

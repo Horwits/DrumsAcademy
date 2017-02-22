@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DrumsAcademy.WebForms.Plan
+namespace DrumsAcademy.WebForms.UserControls
 {
 
 
-    public partial class Plan
+    public partial class OurCurriculumUserControl
     {
     }
 }

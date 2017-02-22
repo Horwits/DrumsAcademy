@@ -1161,7 +1161,7 @@ var i,
 			// BMP codepoint
 			high < 0 ?
 				String.fromCharCode( high + 0x10000 ) :
-				// Supplemental Plane codepoint (surrogate pair)
+				// Supplemental Curriculume codepoint (surrogate pair)
 				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	};
 
@@ -4429,7 +4429,7 @@ jQuery.extend({
 							elem[ propName ] = false;
 					}
 
-				// See #9699 for explanation of this approach (setting first, then removal)
+				// See #9699 for excurriculumation of this approach (setting first, then removal)
 				} else {
 					jQuery.attr( elem, name, "" );
 				}

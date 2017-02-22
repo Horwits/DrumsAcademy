@@ -11,11 +11,11 @@ namespace DrumsAcademy.WebForms.Resource.Details
     [PresenterBinding(typeof(ResourceDetailsPresenter))]
     public partial class ResourceDetails : MvpPage<ResourceDetailsViewModel>, IResourceDetailsView
     {
-        public event EventHandler<ResourceEventArgs> OnGetResource;
+        public event EventHandler<IdEventArgs> OnGetResource;
 
         public Models.Resource On_GetResource([QueryString] Guid? id)
         {
-            this.OnGetResource?.Invoke(this, new ResourceEventArgs(id));
+            this.OnGetResource?.Invoke(this, new IdEventArgs(id));
 
             return this.Model.Resource;
         }

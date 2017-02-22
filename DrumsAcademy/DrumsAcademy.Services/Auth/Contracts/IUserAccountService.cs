@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using DrumsAcademy.Authentication;
 
@@ -10,11 +11,12 @@ namespace DrumsAcademy.Services.Auth.Contracts
 
         int DeleteUser(string email);
 
+        IQueryable<ApplicationUser> GetAllUsers();
+
+        IQueryable<ApplicationUser> GetTopFiveUsers();
+
         ApplicationUser GetUserByEmail(string email);
 
-        /*IQueryable<ApplicationUser> GetAllUsers();
-
-        IQueryable<ApplicationUser> GetTopFiveUsers();*/
         ApplicationUser GetUserById(Guid? id);
     }
 }
